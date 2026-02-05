@@ -56,16 +56,6 @@ const CAGDAS = {
 
 <br/>
 
-### 📊 GitHub Stats
-
-<a href="https://github.com/cagdasaydemir">
-  <img height="180" align="center" src="https://github-readme-stats.vercel.app/api?username=cagdasaydemir&show_icons=true&locale=en&theme=shadow_blue&include_all_commits=true&count_private=true" alt="cagdasaydemir"/>
-  <img height="180" align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=cagdasaydemir&show_icons=true&locale=en&layout=compact&langs_count=8&theme=shadow_blue" alt="cagdasaydemir"/>
-</a>
-
-<br/>
-<br/>
-
 ### 📫 Connect with Me
 
 <a href="https://www.linkedin.com/in/cagdasaydemir/" target="blank"><img align="center" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>

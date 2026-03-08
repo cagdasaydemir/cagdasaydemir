@@ -54,9 +54,8 @@ AI is the force multiplier on top.
 
 #### AI Workflow
 
-<a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=claude,gemini&theme=dark" height="48" />
-</a>
+<img src="https://img.shields.io/badge/Claude_Code-0d1117?style=for-the-badge&logo=anthropic&logoColor=d2a8ff" height="48" />&nbsp;
+<img src="https://img.shields.io/badge/Gemini-0d1117?style=for-the-badge&logo=googlegemini&logoColor=8E75B2" height="48" />
 
 <br/>
 

@@ -8,12 +8,16 @@
   <img alt="Cagdas Aydemir" src="./header-dark.svg" width="100%" />
 </picture>
 
+<br/>
+
 <a href="https://www.cagdasaydemir.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./links-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./links-light.svg">
-    <img alt="Links" src="./links-dark.svg" width="500" />
-  </picture>
+  <img src="https://img.shields.io/badge/cagdasaydemir.com-0d1117?style=for-the-badge&logo=googlechrome&logoColor=58a6ff" height="32" />
+</a>&nbsp;
+<a href="https://www.linkedin.com/in/cagdasaydemir/">
+  <img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" height="32" />
+</a>&nbsp;
+<a href="mailto:aydemir.cagdas@hotmail.com">
+  <img src="https://img.shields.io/badge/Email-0d1117?style=for-the-badge&logo=gmail&logoColor=EA4335" height="32" />
 </a>
 
 <br/><br/>
@@ -28,26 +32,98 @@ AI is the force multiplier on top.
 
 <br/>
 
+#### Backend
+
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=cs,dotnet&theme=dark" height="48" />
+</a>
+&nbsp;&nbsp;
+<img src="https://img.shields.io/badge/MSSQL-0d1117?style=for-the-badge&logo=microsoftsqlserver&logoColor=CC2927" height="38" />
+
+#### Frontend
+
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=react,ts,js,html,css,sass,bootstrap&theme=dark" height="48" />
+</a>
+
+#### Cloud & DevOps
+
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=azure,docker,git,github,vscode&theme=dark" height="48" />
+</a>
+
+#### AI Workflow
+
+<img src="https://img.shields.io/badge/Claude-0d1117?style=for-the-badge&logo=anthropic&logoColor=d2a8ff" height="38" />
+<img src="https://img.shields.io/badge/Claude_Code-0d1117?style=for-the-badge&logo=anthropic&logoColor=d2a8ff" height="38" />
+
+<br/>
+
+---
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="33%">
+<a href="https://yigitoglu.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./card-yigitoglu-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./card-yigitoglu-light.svg">
+    <img src="./card-yigitoglu-dark.svg" width="100%" />
+  </picture>
+</a>
+</td>
+<td align="center" width="33%">
+<a href="https://helbeto.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./card-helbeto-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./card-helbeto-light.svg">
+    <img src="./card-helbeto-dark.svg" width="100%" />
+  </picture>
+</a>
+</td>
+<td align="center" width="33%">
+<a href="https://rubin.com.tr">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./card-rubin-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./card-rubin-light.svg">
+    <img src="./card-rubin-dark.svg" width="100%" />
+  </picture>
+</a>
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<a href="https://valorygunesli.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./card-valory-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./card-valory-light.svg">
+    <img src="./card-valory-dark.svg" width="100%" />
+  </picture>
+</a>
+</td>
+<td align="center" width="33%">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./stack-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./stack-light.svg">
-  <img alt="Tech Stack" src="./stack-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./card-cms-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./card-cms-light.svg">
+  <img src="./card-cms-dark.svg" width="100%" />
 </picture>
-
-<br/><br/>
-
-[yigitoglu.com](https://yigitoglu.com) · [helbeto.com](https://helbeto.com) · [rubin.com.tr](https://rubin.com.tr) · [valorygunesli.com](https://valorygunesli.com)
-
+</td>
+<td align="center" width="33%">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./projects-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./projects-light.svg">
-  <img alt="Projects" src="./projects-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./card-soa-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./card-soa-light.svg">
+  <img src="./card-soa-dark.svg" width="100%" />
 </picture>
+</td>
+</tr>
+</table>
 
-<br/><br/>
+<br/>
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=cagdasaydemir&theme=github-compact&hide_border=true&custom_title=" width="90%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=cagdasaydemir&bg_color=0d1117&color=7ee787&line=7ee787&point=0d1117&area=true&area_color=7ee78730&hide_border=true&custom_title=" width="90%" />
 
 </div>

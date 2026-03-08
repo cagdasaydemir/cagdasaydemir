@@ -1,0 +1,65 @@
+<svg fill="none" viewBox="0 0 260 150" width="260" height="150" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .card {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+          background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+          border: 1px solid rgba(255,255,255,0.06);
+          border-radius: 14px;
+          padding: 22px;
+          height: 148px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          position: relative;
+          overflow: hidden;
+          animation: cardBreath 6s ease-in-out infinite;
+        }
+        .card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, rgba(88,166,255,0.3), transparent);
+          animation: lineReveal 1s ease forwards;
+        }
+        @keyframes cardBreath {
+          0%, 100% { border-color: rgba(255,255,255,0.06); }
+          50% { border-color: rgba(255,255,255,0.12); }
+        }
+        @keyframes lineReveal {
+          0% { opacity: 0; transform: scaleX(0); }
+          100% { opacity: 1; transform: scaleX(1); }
+        }
+        .dot-row { display: flex; align-items: center; gap: 8px; }
+        .dot {
+          width: 7px; height: 7px; border-radius: 50%;
+          background: #7ee787;
+          animation: dotPulse 3s ease-in-out infinite;
+        }
+        @keyframes dotPulse {
+          0%, 100% { opacity: 0.5; }
+          50% { opacity: 1; }
+        }
+        .title { color: #f0f6fc; font-size: 14px; font-weight: 600; }
+        .desc { color: #8b949e; font-size: 11px; line-height: 1.5; }
+        .tag {
+          display: inline-block;
+          padding: 3px 10px; border-radius: 100px;
+          font-size: 10px; font-weight: 500;
+          color: #79c0ff;
+          background: rgba(88,166,255,0.06);
+          border: 1px solid rgba(88,166,255,0.1);
+          margin-top: auto; align-self: flex-start;
+        }
+      </style>
+      <div class="card">
+        <div class="dot-row"><span class="dot"></span><span class="title">yigitoglu.com</span></div>
+        <div class="desc">Enterprise website with full CMS integration</div>
+        <span class="tag">.NET · MVC · MSSQL</span>
+      </div>
+    </div>
+  </foreignObject>
+</svg>

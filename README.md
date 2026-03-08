@@ -11,13 +11,13 @@
 <br/>
 
 <a href="https://www.cagdasaydemir.com">
-  <img src="https://img.shields.io/badge/cagdasaydemir.com-0d1117?style=for-the-badge&logo=googlechrome&logoColor=58a6ff" height="32" />
-</a>&nbsp;
+  <img src="https://img.shields.io/badge/cagdasaydemir.com-0d1117?style=for-the-badge&logo=googlechrome&logoColor=58a6ff&labelColor=0d1117" height="40" />
+</a>&nbsp;&nbsp;
 <a href="https://www.linkedin.com/in/cagdasaydemir/">
-  <img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" height="32" />
-</a>&nbsp;
+  <img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2&labelColor=0d1117" height="40" />
+</a>&nbsp;&nbsp;
 <a href="mailto:aydemir.cagdas@hotmail.com">
-  <img src="https://img.shields.io/badge/Email-0d1117?style=for-the-badge&logo=gmail&logoColor=EA4335" height="32" />
+  <img src="https://img.shields.io/badge/Email-0d1117?style=for-the-badge&logo=gmail&logoColor=EA4335&labelColor=0d1117" height="40" />
 </a>
 
 <br/><br/>
@@ -38,7 +38,7 @@ AI is the force multiplier on top.
   <img src="https://skillicons.dev/icons?i=cs,dotnet&theme=dark" height="48" />
 </a>
 &nbsp;&nbsp;
-<img src="https://img.shields.io/badge/MSSQL-0d1117?style=for-the-badge&logo=microsoftsqlserver&logoColor=CC2927" height="38" />
+<img src="https://img.shields.io/badge/MSSQL-0d1117?style=for-the-badge&logo=microsoftsqlserver&logoColor=CC2927" height="48" />
 
 #### Frontend
 
@@ -54,8 +54,13 @@ AI is the force multiplier on top.
 
 #### AI Workflow
 
-<img src="https://img.shields.io/badge/Claude-0d1117?style=for-the-badge&logo=anthropic&logoColor=d2a8ff" height="38" />
-<img src="https://img.shields.io/badge/Claude_Code-0d1117?style=for-the-badge&logo=anthropic&logoColor=d2a8ff" height="38" />
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=ai&theme=dark" height="48" />
+</a>
+&nbsp;&nbsp;
+<img src="https://img.shields.io/badge/Claude-0d1117?style=for-the-badge&logo=anthropic&logoColor=d2a8ff" height="48" />
+<img src="https://img.shields.io/badge/Claude_Code-0d1117?style=for-the-badge&logo=anthropic&logoColor=d2a8ff" height="48" />
+<img src="https://img.shields.io/badge/Gemini-0d1117?style=for-the-badge&logo=googlegemini&logoColor=8E75B2" height="48" />
 
 <br/>
 

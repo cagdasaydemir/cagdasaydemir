@@ -1,0 +1,111 @@
+<svg fill="none" viewBox="0 0 800 220" width="800" height="220" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .stack {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+          padding: 8px 0;
+        }
+        .group {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          opacity: 0;
+          animation: fadeRow 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .group:nth-child(1) { animation-delay: 0.1s; }
+        .group:nth-child(2) { animation-delay: 0.2s; }
+        .group:nth-child(3) { animation-delay: 0.3s; }
+        .group:nth-child(4) { animation-delay: 0.4s; }
+        @keyframes fadeRow {
+          0% { opacity: 0; transform: translateX(-10px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+        .label {
+          color: #9ca3af;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          min-width: 110px;
+        }
+        .chips {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+        }
+        .chip {
+          display: inline-flex;
+          align-items: center;
+          padding: 7px 16px;
+          border-radius: 10px;
+          font-size: 13px;
+          font-weight: 500;
+          color: #24292f;
+          background: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.01) 100%);
+          border: 1px solid rgba(0,0,0,0.07);
+          animation: chipGlow 5s ease-in-out infinite;
+        }
+        .group:nth-child(1) .chip { animation-delay: 0.5s; }
+        .group:nth-child(2) .chip { animation-delay: 1s; }
+        .group:nth-child(3) .chip { animation-delay: 1.5s; }
+        .group:nth-child(4) .chip { animation-delay: 2s; }
+        @keyframes chipGlow {
+          0%, 100% { border-color: rgba(0,0,0,0.07); }
+          50% { border-color: rgba(9,105,218,0.12); }
+        }
+        .chip-ai {
+          color: #8250df;
+          background: linear-gradient(135deg, rgba(130,80,223,0.06) 0%, rgba(130,80,223,0.02) 100%);
+          border-color: rgba(130,80,223,0.1);
+        }
+        .chip-ai { animation-name: chipGlowAi; }
+        @keyframes chipGlowAi {
+          0%, 100% { border-color: rgba(130,80,223,0.1); box-shadow: none; }
+          50% { border-color: rgba(130,80,223,0.2); box-shadow: 0 0 10px rgba(130,80,223,0.04); }
+        }
+      </style>
+      <div class="stack">
+        <div class="group">
+          <span class="label">Backend</span>
+          <div class="chips">
+            <span class="chip">C#</span>
+            <span class="chip">.NET Core</span>
+            <span class="chip">ASP.NET MVC</span>
+            <span class="chip">EF Core</span>
+            <span class="chip">MSSQL</span>
+          </div>
+        </div>
+        <div class="group">
+          <span class="label">Frontend</span>
+          <div class="chips">
+            <span class="chip">React</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">HTML / CSS</span>
+            <span class="chip">SASS</span>
+          </div>
+        </div>
+        <div class="group">
+          <span class="label">Cloud</span>
+          <div class="chips">
+            <span class="chip">Azure</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Git</span>
+          </div>
+        </div>
+        <div class="group">
+          <span class="label">AI Workflow</span>
+          <div class="chips">
+            <span class="chip chip-ai">Claude</span>
+            <span class="chip chip-ai">Claude Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>

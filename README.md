@@ -12,7 +12,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./links-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./links-light.svg">
-    <img alt="Links" src="./links-dark.svg" width="420" />
+    <img alt="Links" src="./links-dark.svg" width="500" />
   </picture>
 </a>
 
@@ -26,8 +26,6 @@ AI is the force multiplier on top.
 
 > The question is no longer *what you know* but *what you can ship* — and I ship fast.
 
-**Open to remote roles with EU-based companies · Open to relocation**
-
 <br/>
 
 <picture>
@@ -37,6 +35,8 @@ AI is the force multiplier on top.
 </picture>
 
 <br/><br/>
+
+[yigitoglu.com](https://yigitoglu.com) · [helbeto.com](https://helbeto.com) · [rubin.com.tr](https://rubin.com.tr) · [valorygunesli.com](https://valorygunesli.com)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./projects-dark.svg">
@@ -48,6 +48,6 @@ AI is the force multiplier on top.
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=cagdasaydemir&bg_color=0d1117&color=8b949e&line=7ee787&point=7ee787&area=true&area_color=7ee78715&hide_border=true&custom_title=" width="90%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=cagdasaydemir&theme=github-compact&hide_border=true&custom_title=" width="90%" />
 
 </div>

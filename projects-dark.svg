@@ -44,7 +44,6 @@
         .card:nth-child(5)::before { animation-delay: 0.8s; }
         .card:nth-child(6) { animation-delay: 0.3s, 2.5s; }
         .card:nth-child(6)::before { animation-delay: 0.9s; }
-
         @keyframes cardIn {
           0% { opacity: 0; transform: translateY(12px) scale(0.97); }
           100% { opacity: 1; transform: translateY(0) scale(1); }
@@ -57,15 +56,9 @@
           0% { opacity: 0; transform: scaleX(0); }
           100% { opacity: 1; transform: scaleX(1); }
         }
-        .dot-row {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
+        .dot-row { display: flex; align-items: center; gap: 8px; }
         .dot {
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
+          width: 7px; height: 7px; border-radius: 50%;
           background: #7ee787;
           animation: dotPulse 3s ease-in-out infinite;
         }
@@ -73,49 +66,38 @@
           0%, 100% { opacity: 0.5; box-shadow: none; }
           50% { opacity: 1; box-shadow: 0 0 6px rgba(126,231,135,0.4); }
         }
-        .card-title {
-          color: #f0f6fc;
-          font-size: 14px;
-          font-weight: 600;
-        }
-        .card-desc {
-          color: #8b949e;
-          font-size: 12px;
-          line-height: 1.6;
-        }
+        .card-title { color: #f0f6fc; font-size: 14px; font-weight: 600; }
+        .card-desc { color: #8b949e; font-size: 12px; line-height: 1.6; }
         .card-tag {
           display: inline-block;
-          padding: 4px 12px;
-          border-radius: 100px;
-          font-size: 11px;
-          font-weight: 500;
+          padding: 4px 12px; border-radius: 100px;
+          font-size: 11px; font-weight: 500;
           color: #79c0ff;
-          background: rgba(88, 166, 255, 0.06);
-          border: 1px solid rgba(88, 166, 255, 0.1);
-          margin-top: auto;
-          align-self: flex-start;
+          background: rgba(88,166,255,0.06);
+          border: 1px solid rgba(88,166,255,0.1);
+          margin-top: auto; align-self: flex-start;
         }
       </style>
       <div class="grid">
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">yigitoglu.com</span></div>
           <div class="card-desc">Enterprise website with full CMS integration</div>
-          <span class="card-tag">.NET · React</span>
+          <span class="card-tag">.NET · MVC · MSSQL</span>
         </div>
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">helbeto.com</span></div>
           <div class="card-desc">Enterprise website with custom design system</div>
-          <span class="card-tag">.NET · React</span>
+          <span class="card-tag">.NET · MVC · MSSQL</span>
         </div>
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">rubin.com.tr</span></div>
           <div class="card-desc">Enterprise website with multi-language support</div>
-          <span class="card-tag">.NET · React</span>
+          <span class="card-tag">.NET · MVC · MSSQL</span>
         </div>
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">valorygunesli.com</span></div>
           <div class="card-desc">Enterprise website with SEO optimization</div>
-          <span class="card-tag">.NET · React</span>
+          <span class="card-tag">.NET · MVC · MSSQL</span>
         </div>
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">Multilingual CMS</span></div>

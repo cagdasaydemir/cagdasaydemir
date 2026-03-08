@@ -56,15 +56,9 @@
           0% { opacity: 0; transform: scaleX(0); }
           100% { opacity: 1; transform: scaleX(1); }
         }
-        .dot-row {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
+        .dot-row { display: flex; align-items: center; gap: 8px; }
         .dot {
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
+          width: 7px; height: 7px; border-radius: 50%;
           background: #116329;
           animation: dotPulse 3s ease-in-out infinite;
         }
@@ -72,49 +66,38 @@
           0%, 100% { opacity: 0.5; box-shadow: none; }
           50% { opacity: 1; box-shadow: 0 0 6px rgba(22,101,52,0.2); }
         }
-        .card-title {
-          color: #24292f;
-          font-size: 14px;
-          font-weight: 600;
-        }
-        .card-desc {
-          color: #57606a;
-          font-size: 12px;
-          line-height: 1.6;
-        }
+        .card-title { color: #24292f; font-size: 14px; font-weight: 600; }
+        .card-desc { color: #57606a; font-size: 12px; line-height: 1.6; }
         .card-tag {
           display: inline-block;
-          padding: 4px 12px;
-          border-radius: 100px;
-          font-size: 11px;
-          font-weight: 500;
+          padding: 4px 12px; border-radius: 100px;
+          font-size: 11px; font-weight: 500;
           color: #0550ae;
-          background: rgba(9, 105, 218, 0.05);
-          border: 1px solid rgba(9, 105, 218, 0.08);
-          margin-top: auto;
-          align-self: flex-start;
+          background: rgba(9,105,218,0.05);
+          border: 1px solid rgba(9,105,218,0.08);
+          margin-top: auto; align-self: flex-start;
         }
       </style>
       <div class="grid">
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">yigitoglu.com</span></div>
           <div class="card-desc">Enterprise website with full CMS integration</div>
-          <span class="card-tag">.NET · React</span>
+          <span class="card-tag">.NET · MVC · MSSQL</span>
         </div>
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">helbeto.com</span></div>
           <div class="card-desc">Enterprise website with custom design system</div>
-          <span class="card-tag">.NET · React</span>
+          <span class="card-tag">.NET · MVC · MSSQL</span>
         </div>
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">rubin.com.tr</span></div>
           <div class="card-desc">Enterprise website with multi-language support</div>
-          <span class="card-tag">.NET · React</span>
+          <span class="card-tag">.NET · MVC · MSSQL</span>
         </div>
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">valorygunesli.com</span></div>
           <div class="card-desc">Enterprise website with SEO optimization</div>
-          <span class="card-tag">.NET · React</span>
+          <span class="card-tag">.NET · MVC · MSSQL</span>
         </div>
         <div class="card">
           <div class="dot-row"><span class="dot"></span><span class="card-title">Multilingual CMS</span></div>

@@ -1,0 +1,10 @@
+<svg fill="none" viewBox="0 0 120 40" width="120" height="40" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="120" height="40" rx="6" fill="#161b22"/>
+  <g transform="translate(14, 12)">
+    <rect width="16" height="16" rx="3" fill="#8b949e"/>
+    <rect x="3.5" y="6.8" width="2" height="5.8" fill="#161b22"/>
+    <circle cx="4.5" cy="4.5" r="1.1" fill="#161b22"/>
+    <path d="M7.8 6.8h1.8v1.1c.4-.7 1.2-1.3 2.3-1.3 1.9 0 2.7 1.3 2.7 3.1v3.9h-1.9V9.9c0-.9-.3-1.5-1.2-1.5s-1.3.6-1.3 1.5v2.7H7.8V6.8z" fill="#161b22"/>
+  </g>
+  <text x="38" y="25" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" letter-spacing="0.5" fill="#8b949e">LinkedIn</text>
+</svg>

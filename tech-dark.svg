@@ -1,0 +1,15 @@
+<svg fill="none" viewBox="0 0 650 85" width="650" height="85" xmlns="http://www.w3.org/2000/svg">
+  <rect width="650" height="85" fill="transparent"/>
+  <text x="0" y="20" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13">
+    <tspan font-weight="500" fill="#8b949e">Backend</tspan>
+    <tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#484f58">C#  ·  .NET  ·  MSSQL</tspan>
+  </text>
+  <text x="0" y="46" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13">
+    <tspan font-weight="500" fill="#8b949e">Frontend</tspan>
+    <tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#484f58">React  ·  TypeScript  ·  JavaScript  ·  HTML  ·  CSS  ·  Sass  ·  Bootstrap  ·  Tailwind</tspan>
+  </text>
+  <text x="0" y="72" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13">
+    <tspan font-weight="500" fill="#8b949e">DevOps</tspan>
+    <tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#484f58">Azure  ·  Docker  ·  Git  ·  GitHub  ·  VS Code</tspan>
+  </text>
+</svg>

@@ -1,0 +1,25 @@
+{
+  "name": "GitHub Profile README",
+  "slug": "github-cagdasaydemir-readme",
+  "description": "GitHub profil sayfası tasarımı. SVG kartlar, skill badge'leri, dark/light mode desteği.",
+  "status": "completed",
+  "priority": "low",
+  "tech": ["Markdown", "HTML", "SVG", "CSS Animations"],
+  "category": "design",
+  "created": "2025-03-08",
+  "lastUpdated": "2026-03-11",
+  "completion": 90,
+  "tasks": {
+    "active": 0,
+    "completed": 5,
+    "backlog": 2,
+    "blocked": 0
+  },
+  "links": {
+    "repo": "https://github.com/cagdasaydemir/cagdasaydemir",
+    "live": "https://github.com/cagdasaydemir",
+    "docs": ""
+  },
+  "tags": ["github", "profile", "svg", "design"],
+  "monitored": false
+}

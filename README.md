@@ -20,13 +20,6 @@
 
 <br/>
 
-<div><a href="https://yigitoglu.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./site-yigitoglu-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./site-yigitoglu-light.svg"><img src="./site-yigitoglu-dark.svg" height="40" alt="yigitoglu.com" /></picture></a>&nbsp;
-<a href="https://helbeto.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./site-helbeto-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./site-helbeto-light.svg"><img src="./site-helbeto-dark.svg" height="40" alt="helbeto.com" /></picture></a>&nbsp;
-<a href="https://rubin.com.tr"><picture><source media="(prefers-color-scheme: dark)" srcset="./site-rubin-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./site-rubin-light.svg"><img src="./site-rubin-dark.svg" height="40" alt="rubin.com.tr" /></picture></a>&nbsp;
-<a href="https://valorygunesli.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./site-valory-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./site-valory-light.svg"><img src="./site-valory-dark.svg" height="40" alt="valorygunesli.com" /></picture></a></div>
-
-<br/>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./tech-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./tech-light.svg">

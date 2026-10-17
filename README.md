@@ -31,6 +31,14 @@
 <br/>
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./activity-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./activity-light.svg">
+  <img alt="Commit Activity" src="./activity-dark.svg" />
+</picture>
+
+<br/>
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green.svg">
   <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-green.svg">
   <img alt="3D Contribution Graph" src="./profile-3d-contrib/profile-night-green.svg" width="100%" />

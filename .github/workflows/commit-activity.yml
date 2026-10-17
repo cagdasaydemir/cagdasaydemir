@@ -1,0 +1,32 @@
+name: Commit Activity
+
+on:
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: generate commit activity cards
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render activity cards
+        env:
+          # Fine-grained PAT: all repositories, Contents read-only
+          GH_TOKEN: ${{ secrets.ACTIVITY_TOKEN }}
+          GH_USER: cagdasaydemir
+          EXCLUDE_REPOS: senedit-design-gallery, web-design-references
+          TIMEZONE: Europe/Istanbul
+        run: python3 .github/scripts/commit_activity.py
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add activity-dark.svg activity-light.svg
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update commit activity cards"
+          git pull --rebase
+          git push

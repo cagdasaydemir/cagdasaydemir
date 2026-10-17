@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render commit activity (hour of day, day of week, languages) as dark/light SVG cards.
+"""Render commit activity (hours, weekdays, years, streaks, languages) as dark/light SVG cards.
 
 Reads every commit authored by GH_USER across the repositories the token can
 see (private included), converts timestamps to TIMEZONE and writes
@@ -17,6 +17,7 @@ Environment:
                  (e.g. after excluding a repository)
 """
 
+import calendar
 import html
 import json
 import math
@@ -26,7 +27,7 @@ import sys
 import urllib.error
 import urllib.request
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -74,8 +75,9 @@ def list_repos(token, excluded):
     return repos
 
 
-def collect_commit_dates(token, user, repos):
-    seen, dates = set(), []
+def collect_commits(token, user, repos):
+    """(repository, ISO author date) for every commit by user, deduplicated by SHA."""
+    seen, commits = set(), []
     for repo in repos:
         url = f"{API}/repos/{repo['full_name']}/commits?author={user}&per_page=100"
         try:
@@ -83,11 +85,15 @@ def collect_commit_dates(token, user, repos):
                 if commit["sha"] in seen:  # same history pushed to two repos
                     continue
                 seen.add(commit["sha"])
-                dates.append(commit["commit"]["author"]["date"])
+                commits.append((repo, commit["commit"]["author"]["date"]))
         except urllib.error.HTTPError as err:
             if err.code != 409:  # 409 = empty repository
                 raise
-    return dates
+    return commits
+
+
+def parse_date(iso, tz):
+    return datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(tz)
 
 
 def collect_languages(token, repos):
@@ -136,6 +142,45 @@ def current_total(path):
     return int(match.group(1).replace(",", "")) if match else 0
 
 
+def streaks(dates, today):
+    """Longest run of consecutive commit days, and the run ending today or yesterday."""
+    days = sorted(set(dates))
+    longest = run = 1
+    for prev, cur in zip(days, days[1:]):
+        run = run + 1 if cur - prev == timedelta(days=1) else 1
+        longest = max(longest, run)
+    current, day = 0, today if today in dates else today - timedelta(days=1)
+    while day in dates:
+        current, day = current + 1, day - timedelta(days=1)
+    return longest, current
+
+
+def stat_row(x, y, label, value, theme):
+    return (f'<text x="{x}" y="{y}" font-family="{FONT}" font-size="13">'
+            f'<tspan font-weight="500" fill="{theme["title"]}">{label}</tspan>'
+            f'<tspan dx="10" font-weight="300" letter-spacing="1.5" fill="{theme["muted"]}">{value}</tspan>'
+            f'</text>')
+
+
+def year_section(years, stats, y, theme):
+    """Commits per year as small bars (count on top) with streak/month stats beside them."""
+    parts = [text(0, y, "BY YEAR", 10, 400, theme["muted"], 2),
+             text(340, y, "STREAKS", 10, 400, theme["muted"], 2)]
+    labels = sorted(years)
+    counts = [years[year] for year in labels]
+    base, height, width, gap = y + 80, 50, 290, 18
+    parts += bars(counts, 0, width, base, height, gap, theme)
+    step, peak = width / len(counts), max(counts)
+    for i, (year, count) in enumerate(zip(labels, counts)):
+        cx = round(i * step + (step - gap) / 2, 1)
+        top = base - max(round(height * count / peak, 1), 1.5)
+        parts.append(text(cx, round(top - 6, 1), f"{count:,}", 10, 300, theme["muted"], anchor="middle"))
+        parts.append(text(cx, base + 16, year, 10, 300, theme["muted"], anchor="middle"))
+    for i, (label, value) in enumerate(stats):
+        parts.append(stat_row(340, y + 28 + 26 * i, label, value, theme))
+    return parts
+
+
 def language_section(shares, y, theme):
     """Stacked share bar plus a dot legend; colors step down the green levels by rank."""
     colors = [theme["other"] if name == "Other" else theme["levels"][max(4 - i, 1)]
@@ -157,10 +202,10 @@ def language_section(shares, y, theme):
     return parts
 
 
-def render(hours, days, total, first_year, last_year, utc_label, langs, theme):
+def render(hours, days, total, first_year, last_year, utc_label, years, stats, langs, theme):
     peak_hour = max(range(24), key=lambda h: hours[h])
     busiest_day = max(range(7), key=lambda d: days[d])
-    years = str(first_year) if first_year == last_year else f"{first_year} – {last_year}"
+    year_range = str(first_year) if first_year == last_year else f"{first_year} – {last_year}"
     shares = "  ·  ".join(
         f"{name} {round(100 * sum(hours[h] for h in span) / total)}%" for name, span in SEGMENTS)
 
@@ -168,7 +213,7 @@ def render(hours, days, total, first_year, last_year, utc_label, langs, theme):
     parts = [
         text(0, 28, f"Peak hour {peak_hour:02d}:00. Busiest day {WEEKDAYS[busiest_day]}.",
              18, 400, theme["title"]),
-        text(0, 60, f"{total:,} COMMITS  ·  {years}  ·  {utc_label}", 11, 300, theme["muted"], 2),
+        text(0, 60, f"{total:,} COMMITS  ·  {year_range}  ·  {utc_label}", 11, 300, theme["muted"], 2),
         text(hx, 96, "BY HOUR", 10, 400, theme["muted"], 2),
         text(dx, 96, "BY WEEKDAY", 10, 400, theme["muted"], 2),
         *bars([hours[h] for h in range(24)], hx, hw, base, height, 4, theme),
@@ -186,10 +231,11 @@ def render(hours, days, total, first_year, last_year, utc_label, langs, theme):
         f'<tspan font-weight="500" fill="{theme["title"]}">Rhythm</tspan>'
         f'<tspan dx="10" font-weight="300" letter-spacing="1.5" fill="{theme["muted"]}">{shares}</tspan>'
         f'</text>')
-    height = 250
+    parts.extend(year_section(years, stats, 272, theme))
+    height = 390
     if langs:
-        parts.extend(language_section(langs, 272, theme))
-        height = 330
+        parts.extend(language_section(langs, 402, theme))
+        height = 460
     body = "\n  ".join(parts)
     return (f'<svg fill="none" viewBox="0 0 650 {height}" width="650" height="{height}" '
             f'xmlns="http://www.w3.org/2000/svg">\n  <rect width="650" height="{height}" fill="transparent"/>\n'
@@ -205,8 +251,7 @@ def main():
     out_dir = Path(os.environ.get("OUTPUT_DIR", "."))
 
     repos = list_repos(token, excluded)
-    stamps = [datetime.fromisoformat(d.replace("Z", "+00:00")).astimezone(tz)
-              for d in collect_commit_dates(token, user, repos)]
+    stamps = [parse_date(d, tz) for _, d in collect_commits(token, user, repos)]
     if not stamps:
         sys.exit("No commits found; keeping the existing cards")  # never publish an empty chart
     previous = current_total(out_dir / "activity-dark.svg")
@@ -221,11 +266,22 @@ def main():
     utc_label = f"UTC{offset:+g}"
     first_year, last_year = min(s.year for s in stamps), max(s.year for s in stamps)
     langs = language_shares(collect_languages(token, repos))
+    years = Counter({str(y): 0 for y in range(first_year, last_year + 1)})  # keep empty years visible
+    years.update(str(s.year) for s in stamps)
+    longest, current = streaks({s.date() for s in stamps}, datetime.now(tz).date())
+    (busy_year, busy_month), busy_count = Counter((s.year, s.month) for s in stamps).most_common(1)[0]
+    stats = [
+        ("Longest streak", f"{longest} days"),
+        ("Current streak", f"{current} days"),
+        ("Busiest month", f"{calendar.month_name[busy_month]} {busy_year}  ·  {busy_count:,} commits"),
+        ("Active days", f"{len({s.date() for s in stamps}):,}"),
+    ]
 
     for name, theme in THEMES.items():
-        svg = render(hours, days, len(stamps), first_year, last_year, utc_label, langs, theme)
+        svg = render(hours, days, len(stamps), first_year, last_year, utc_label, years, stats, langs, theme)
         (out_dir / f"activity-{name}.svg").write_text(svg, encoding="utf-8")
     print(f"{len(stamps)} commits rendered ({first_year}-{last_year}, {utc_label}); "
+          + "; ".join(f"{label}: {value}" for label, value in stats) + "; "
           + ", ".join(f"{name} {pct:.1f}%" for name, pct in langs))
 
 

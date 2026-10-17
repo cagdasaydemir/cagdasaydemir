@@ -1,39 +1,39 @@
 <svg fill="none" viewBox="0 0 650 460" width="650" height="460" xmlns="http://www.w3.org/2000/svg">
   <rect width="650" height="460" fill="transparent"/>
   <text x="0" y="28" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start" fill="#656d76">Peak hour 21:00. Busiest day Sunday.</text>
-  <text x="0" y="60" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="300" letter-spacing="2" text-anchor="start" fill="#8b949e">1,054 COMMITS  ·  2022 – 2026  ·  UTC+3</text>
+  <text x="0" y="60" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="300" letter-spacing="2" text-anchor="start" fill="#8b949e">1,091 COMMITS  ·  2022 – 2026  ·  UTC+3</text>
   <text x="0" y="96" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start" fill="#8b949e">BY HOUR</text>
   <text x="480" y="96" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start" fill="#8b949e">BY WEEKDAY</text>
-  <rect x="0.0" y="146.7" width="13.9" height="43.3" rx="1" fill="#47a042"/>
-  <rect x="17.9" y="134.2" width="13.9" height="55.8" rx="1" fill="#47a042"/>
-  <rect x="35.8" y="134.2" width="13.9" height="55.8" rx="1" fill="#47a042"/>
-  <rect x="53.8" y="169.2" width="13.9" height="20.8" rx="1" fill="#8cc569"/>
-  <rect x="71.7" y="183.3" width="13.9" height="6.7" rx="1" fill="#d8e887"/>
+  <rect x="0.0" y="146.4" width="13.9" height="43.6" rx="1" fill="#47a042"/>
+  <rect x="17.9" y="135.9" width="13.9" height="54.1" rx="1" fill="#47a042"/>
+  <rect x="35.8" y="135.9" width="13.9" height="54.1" rx="1" fill="#47a042"/>
+  <rect x="53.8" y="169.8" width="13.9" height="20.2" rx="1" fill="#8cc569"/>
+  <rect x="71.7" y="183.5" width="13.9" height="6.5" rx="1" fill="#d8e887"/>
   <rect x="89.6" y="188.5" width="13.9" height="1.5" rx="1" fill="#efefef"/>
-  <rect x="107.5" y="184.2" width="13.9" height="5.8" rx="1" fill="#d8e887"/>
+  <rect x="107.5" y="184.3" width="13.9" height="5.7" rx="1" fill="#d8e887"/>
   <rect x="125.4" y="188.5" width="13.9" height="1.5" rx="1" fill="#efefef"/>
   <rect x="143.3" y="188.5" width="13.9" height="1.5" rx="1" fill="#efefef"/>
   <rect x="161.2" y="188.5" width="13.9" height="1.5" rx="1" fill="#efefef"/>
-  <rect x="179.2" y="188.3" width="13.9" height="1.7" rx="1" fill="#d8e887"/>
-  <rect x="197.1" y="175.0" width="13.9" height="15.0" rx="1" fill="#d8e887"/>
-  <rect x="215.0" y="153.3" width="13.9" height="36.7" rx="1" fill="#8cc569"/>
-  <rect x="232.9" y="133.3" width="13.9" height="56.7" rx="1" fill="#47a042"/>
-  <rect x="250.8" y="117.5" width="13.9" height="72.5" rx="1" fill="#1d6a23"/>
-  <rect x="268.8" y="124.2" width="13.9" height="65.8" rx="1" fill="#1d6a23"/>
-  <rect x="286.7" y="133.3" width="13.9" height="56.7" rx="1" fill="#47a042"/>
-  <rect x="304.6" y="160.0" width="13.9" height="30.0" rx="1" fill="#8cc569"/>
-  <rect x="322.5" y="150.0" width="13.9" height="40.0" rx="1" fill="#8cc569"/>
-  <rect x="340.4" y="150.0" width="13.9" height="40.0" rx="1" fill="#8cc569"/>
-  <rect x="358.3" y="115.8" width="13.9" height="74.2" rx="1" fill="#1d6a23"/>
+  <rect x="179.2" y="188.4" width="13.9" height="1.6" rx="1" fill="#d8e887"/>
+  <rect x="197.1" y="175.5" width="13.9" height="14.5" rx="1" fill="#d8e887"/>
+  <rect x="215.0" y="153.6" width="13.9" height="36.4" rx="1" fill="#8cc569"/>
+  <rect x="232.9" y="134.2" width="13.9" height="55.8" rx="1" fill="#47a042"/>
+  <rect x="250.8" y="117.3" width="13.9" height="72.7" rx="1" fill="#1d6a23"/>
+  <rect x="268.8" y="125.4" width="13.9" height="64.6" rx="1" fill="#1d6a23"/>
+  <rect x="286.7" y="134.2" width="13.9" height="55.8" rx="1" fill="#47a042"/>
+  <rect x="304.6" y="156.1" width="13.9" height="33.9" rx="1" fill="#8cc569"/>
+  <rect x="322.5" y="147.2" width="13.9" height="42.8" rx="1" fill="#47a042"/>
+  <rect x="340.4" y="144.7" width="13.9" height="45.3" rx="1" fill="#47a042"/>
+  <rect x="358.3" y="115.7" width="13.9" height="74.3" rx="1" fill="#1d6a23"/>
   <rect x="376.2" y="110.0" width="13.9" height="80.0" rx="1" fill="#1d6a23"/>
-  <rect x="394.2" y="118.3" width="13.9" height="71.7" rx="1" fill="#1d6a23"/>
-  <rect x="412.1" y="140.8" width="13.9" height="49.2" rx="1" fill="#47a042"/>
-  <rect x="480.0" y="119.1" width="18.3" height="70.9" rx="1" fill="#1d6a23"/>
-  <rect x="504.3" y="135.8" width="18.3" height="54.2" rx="1" fill="#47a042"/>
-  <rect x="528.6" y="152.5" width="18.3" height="37.5" rx="1" fill="#8cc569"/>
-  <rect x="552.9" y="153.6" width="18.3" height="36.4" rx="1" fill="#8cc569"/>
-  <rect x="577.1" y="136.2" width="18.3" height="53.8" rx="1" fill="#47a042"/>
-  <rect x="601.4" y="123.3" width="18.3" height="66.7" rx="1" fill="#1d6a23"/>
+  <rect x="394.2" y="118.1" width="13.9" height="71.9" rx="1" fill="#1d6a23"/>
+  <rect x="412.1" y="142.3" width="13.9" height="47.7" rx="1" fill="#47a042"/>
+  <rect x="480.0" y="114.5" width="18.3" height="75.5" rx="1" fill="#1d6a23"/>
+  <rect x="504.3" y="134.3" width="18.3" height="55.7" rx="1" fill="#47a042"/>
+  <rect x="528.6" y="149.4" width="18.3" height="40.6" rx="1" fill="#47a042"/>
+  <rect x="552.9" y="152.1" width="18.3" height="37.9" rx="1" fill="#8cc569"/>
+  <rect x="577.1" y="135.8" width="18.3" height="54.2" rx="1" fill="#47a042"/>
+  <rect x="601.4" y="120.2" width="18.3" height="69.8" rx="1" fill="#1d6a23"/>
   <rect x="625.7" y="110.0" width="18.3" height="80.0" rx="1" fill="#1d6a23"/>
   <text x="7.0" y="206" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">00</text>
   <text x="114.5" y="206" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">06</text>
@@ -47,28 +47,28 @@
   <text x="586.3" y="206" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">Fr</text>
   <text x="610.6" y="206" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">Sa</text>
   <text x="634.9" y="206" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">Su</text>
-  <text x="0" y="236" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Rhythm</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">Morning 3%  ·  Afternoon 36%  ·  Evening 40%  ·  Night 21%</tspan></text>
+  <text x="0" y="236" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Rhythm</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">Morning 2%  ·  Afternoon 36%  ·  Evening 41%  ·  Night 20%</tspan></text>
   <text x="0" y="272" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start" fill="#8b949e">BY YEAR</text>
   <text x="340" y="272" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start" fill="#8b949e">STREAKS</text>
-  <rect x="0.0" y="350.5" width="40.0" height="1.5" rx="1" fill="#d8e887"/>
+  <rect x="0.0" y="349.8" width="40.0" height="2.2" rx="1" fill="#d8e887"/>
   <rect x="58.0" y="350.5" width="40.0" height="1.5" rx="1" fill="#d8e887"/>
-  <rect x="116.0" y="350.5" width="40.0" height="1.5" rx="1" fill="#efefef"/>
+  <rect x="116.0" y="350.5" width="40.0" height="1.5" rx="1" fill="#d8e887"/>
   <rect x="174.0" y="350.5" width="40.0" height="1.5" rx="1" fill="#d8e887"/>
   <rect x="232.0" y="302.0" width="40.0" height="50.0" rx="1" fill="#1d6a23"/>
-  <text x="20.0" y="344.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">23</text>
+  <text x="20.0" y="343.8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">46</text>
   <text x="20.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2022</text>
-  <text x="78.0" y="344.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">6</text>
+  <text x="78.0" y="344.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">17</text>
   <text x="78.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2023</text>
-  <text x="136.0" y="344.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">0</text>
+  <text x="136.0" y="344.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2</text>
   <text x="136.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2024</text>
   <text x="194.0" y="344.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">1</text>
   <text x="194.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2025</text>
-  <text x="252.0" y="296.0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">1,024</text>
+  <text x="252.0" y="296.0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">1,025</text>
   <text x="252.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2026</text>
   <text x="340" y="300" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Longest streak</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">11 days</tspan></text>
   <text x="340" y="326" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Current streak</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">4 days</tspan></text>
   <text x="340" y="352" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Busiest month</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">September 2026  ·  354 commits</tspan></text>
-  <text x="340" y="378" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Active days</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">89</tspan></text>
+  <text x="340" y="378" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Active days</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">96</tspan></text>
   <text x="0" y="402" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start" fill="#8b949e">BY LANGUAGE</text>
   <rect x="0.0" y="412" width="394.6" height="8" rx="1" fill="#1d6a23"/>
   <rect x="397.6" y="412" width="133.4" height="8" rx="1" fill="#47a042"/>

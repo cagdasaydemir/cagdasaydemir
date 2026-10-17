@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Render commit activity (hour of day, day of week) as dark/light SVG cards.
+"""Render commit activity (hour of day, day of week, languages) as dark/light SVG cards.
 
 Reads every commit authored by GH_USER across the repositories the token can
 see (private included), converts timestamps to TIMEZONE and writes
-activity-dark.svg / activity-light.svg. Only aggregate counts are rendered;
-no repository names or commit messages leave the API.
+activity-dark.svg / activity-light.svg. Language shares are GitHub's per-repo
+byte counts summed over the same repositories. Only aggregate numbers are
+rendered; no repository names or commit messages leave the API.
 
 Environment:
   GH_TOKEN       token with read access to the repositories (required)
@@ -16,6 +17,7 @@ Environment:
                  (e.g. after excluding a repository)
 """
 
+import html
 import json
 import math
 import os
@@ -36,10 +38,11 @@ SEGMENTS = [("Morning", range(6, 12)), ("Afternoon", range(12, 18)),
 
 # Text colors match tech-*.svg / disciplines-*.svg; bar levels (empty, 1-4) are the
 # top-face greens of the 3D contribution graph (night-green / green themes).
+# "other" is the neutral gray for the language bar's remainder segment.
 THEMES = {
-    "dark": {"title": "#8b949e", "muted": "#6e7681",
+    "dark": {"title": "#8b949e", "muted": "#6e7681", "other": "#444444",
              "levels": ["#444444", "#1b7d28", "#24a736", "#2dd143", "#57da69"]},
-    "light": {"title": "#656d76", "muted": "#8b949e",
+    "light": {"title": "#656d76", "muted": "#8b949e", "other": "#d1d9e0",
               "levels": ["#efefef", "#d8e887", "#8cc569", "#47a042", "#1d6a23"]},
 }
 
@@ -63,11 +66,15 @@ def paginate(url, token):
         yield from page
 
 
-def collect_commit_dates(token, user, excluded):
+def list_repos(token, excluded):
     repos = [r for r in paginate(f"{API}/user/repos?affiliation=owner&per_page=100", token)
              if not r["fork"] and r["name"].lower() not in excluded]
     private = sum(r["private"] for r in repos)
     print(f"{len(repos)} repositories visible ({private} private)")
+    return repos
+
+
+def collect_commit_dates(token, user, repos):
     seen, dates = set(), []
     for repo in repos:
         url = f"{API}/repos/{repo['full_name']}/commits?author={user}&per_page=100"
@@ -81,6 +88,27 @@ def collect_commit_dates(token, user, excluded):
             if err.code != 409:  # 409 = empty repository
                 raise
     return dates
+
+
+def collect_languages(token, repos):
+    total = Counter()
+    for repo in repos:
+        languages, _ = get(f"{API}/repos/{repo['full_name']}/languages", token)
+        total.update(languages)
+    return total
+
+
+def language_shares(languages, top=4):
+    """Top languages plus an "Other" bucket, as (name, percent) pairs."""
+    size = sum(languages.values())
+    if not size:
+        return []
+    ranked = languages.most_common()
+    shares = [(name, 100 * value / size) for name, value in ranked[:top]]
+    rest = sum(value for _, value in ranked[top:])
+    if rest:
+        shares.append(("Other", 100 * rest / size))
+    return shares
 
 
 def bars(counts, x0, width, y_base, height, gap, theme):
@@ -108,7 +136,28 @@ def current_total(path):
     return int(match.group(1).replace(",", "")) if match else 0
 
 
-def render(hours, days, total, first_year, last_year, utc_label, theme):
+def language_section(shares, y, theme):
+    """Stacked share bar plus a dot legend; colors step down the green levels by rank."""
+    colors = [theme["other"] if name == "Other" else theme["levels"][max(4 - i, 1)]
+              for i, (name, _) in enumerate(shares)]
+    gap, width = 3, 650
+    usable = width - gap * (len(shares) - 1)
+    parts, x = [text(0, y, "BY LANGUAGE", 10, 400, theme["muted"], 2)], 0.0
+    for (name, pct), color in zip(shares, colors):
+        w = max(usable * pct / 100, 2)
+        parts.append(f'<rect x="{x:.1f}" y="{y + 10}" width="{w:.1f}" height="8" rx="1" fill="{color}"/>')
+        x += w + gap
+    legend = "".join(
+        f'<tspan dx="{0 if i == 0 else 18}" font-size="14" fill="{color}">●</tspan>'
+        f'<tspan dx="6" fill="{theme["muted"]}">{html.escape(name)} '
+        f'{"<1" if pct < 0.5 else round(pct)}%</tspan>'
+        for i, ((name, pct), color) in enumerate(zip(shares, colors)))
+    parts.append(f'<text x="0" y="{y + 42}" font-family="{FONT}" font-size="13" font-weight="300" '
+                 f'letter-spacing="1.5">{legend}</text>')
+    return parts
+
+
+def render(hours, days, total, first_year, last_year, utc_label, langs, theme):
     peak_hour = max(range(24), key=lambda h: hours[h])
     busiest_day = max(range(7), key=lambda d: days[d])
     years = str(first_year) if first_year == last_year else f"{first_year} – {last_year}"
@@ -137,9 +186,13 @@ def render(hours, days, total, first_year, last_year, utc_label, theme):
         f'<tspan font-weight="500" fill="{theme["title"]}">Rhythm</tspan>'
         f'<tspan dx="10" font-weight="300" letter-spacing="1.5" fill="{theme["muted"]}">{shares}</tspan>'
         f'</text>')
+    height = 250
+    if langs:
+        parts.extend(language_section(langs, 272, theme))
+        height = 330
     body = "\n  ".join(parts)
-    return (f'<svg fill="none" viewBox="0 0 650 250" width="650" height="250" '
-            f'xmlns="http://www.w3.org/2000/svg">\n  <rect width="650" height="250" fill="transparent"/>\n'
+    return (f'<svg fill="none" viewBox="0 0 650 {height}" width="650" height="{height}" '
+            f'xmlns="http://www.w3.org/2000/svg">\n  <rect width="650" height="{height}" fill="transparent"/>\n'
             f'  {body}\n</svg>\n')
 
 
@@ -151,8 +204,9 @@ def main():
     tz = ZoneInfo(os.environ.get("TIMEZONE", "Europe/Istanbul"))
     out_dir = Path(os.environ.get("OUTPUT_DIR", "."))
 
+    repos = list_repos(token, excluded)
     stamps = [datetime.fromisoformat(d.replace("Z", "+00:00")).astimezone(tz)
-              for d in collect_commit_dates(token, user, excluded)]
+              for d in collect_commit_dates(token, user, repos)]
     if not stamps:
         sys.exit("No commits found; keeping the existing cards")  # never publish an empty chart
     previous = current_total(out_dir / "activity-dark.svg")
@@ -166,11 +220,13 @@ def main():
     offset = datetime.now(tz).utcoffset().total_seconds() / 3600
     utc_label = f"UTC{offset:+g}"
     first_year, last_year = min(s.year for s in stamps), max(s.year for s in stamps)
+    langs = language_shares(collect_languages(token, repos))
 
     for name, theme in THEMES.items():
-        svg = render(hours, days, len(stamps), first_year, last_year, utc_label, theme)
+        svg = render(hours, days, len(stamps), first_year, last_year, utc_label, langs, theme)
         (out_dir / f"activity-{name}.svg").write_text(svg, encoding="utf-8")
-    print(f"{len(stamps)} commits rendered ({first_year}-{last_year}, {utc_label})")
+    print(f"{len(stamps)} commits rendered ({first_year}-{last_year}, {utc_label}); "
+          + ", ".join(f"{name} {pct:.1f}%" for name, pct in langs))
 
 
 if __name__ == "__main__":

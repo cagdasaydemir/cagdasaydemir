@@ -15,6 +15,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: cagdasaydemir
+      # The tool only sees public repositories in its language ring; redraw it.
+      - name: Redraw language ring
+        env:
+          GH_TOKEN: ${{ secrets.ACTIVITY_TOKEN }}
+          GH_USER: cagdasaydemir
+          EXCLUDE_REPOS: senedit-design-gallery, web-design-references
+        run: python3 .github/scripts/fix_3d_languages.py
       - name: Commit & Push
         run: |
           git config user.name "github-actions[bot]"

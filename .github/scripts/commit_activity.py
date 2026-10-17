@@ -12,6 +12,8 @@ Environment:
   EXCLUDE_REPOS  comma-separated repository names to skip
   TIMEZONE       IANA timezone, default Europe/Istanbul
   OUTPUT_DIR     where the SVGs are written, default current directory
+  ALLOW_DECREASE set to 1 to accept a lower total than the current card
+                 (e.g. after excluding a repository)
 """
 
 import json
@@ -64,6 +66,8 @@ def paginate(url, token):
 def collect_commit_dates(token, user, excluded):
     repos = [r for r in paginate(f"{API}/user/repos?affiliation=owner&per_page=100", token)
              if not r["fork"] and r["name"].lower() not in excluded]
+    private = sum(r["private"] for r in repos)
+    print(f"{len(repos)} repositories visible ({private} private)")
     seen, dates = set(), []
     for repo in repos:
         url = f"{API}/repos/{repo['full_name']}/commits?author={user}&per_page=100"
@@ -96,6 +100,12 @@ def text(x, y, body, size, weight, fill, spacing=0, anchor="start"):
     spacing_attr = f' letter-spacing="{spacing}"' if spacing else ""
     return (f'<text x="{x}" y="{y}" font-family="{FONT}" font-size="{size}" font-weight="{weight}"'
             f'{spacing_attr} text-anchor="{anchor}" fill="{fill}">{body}</text>')
+
+
+def current_total(path):
+    """Commit total shown on an existing card, or 0."""
+    match = path.exists() and re.search(r"([\d,]+) COMMITS", path.read_text(encoding="utf-8"))
+    return int(match.group(1).replace(",", "")) if match else 0
 
 
 def render(hours, days, total, first_year, last_year, utc_label, theme):
@@ -145,6 +155,11 @@ def main():
               for d in collect_commit_dates(token, user, excluded)]
     if not stamps:
         sys.exit("No commits found; keeping the existing cards")  # never publish an empty chart
+    previous = current_total(out_dir / "activity-dark.svg")
+    if len(stamps) < previous and os.environ.get("ALLOW_DECREASE") != "1":
+        # Commit history only grows; a drop means the token lost repository access.
+        sys.exit(f"Found {len(stamps)} commits but the current card shows {previous}; "
+                 "check the token's repository access (keeping the existing cards)")
 
     hours = Counter(s.hour for s in stamps)
     days = Counter(s.weekday() for s in stamps)

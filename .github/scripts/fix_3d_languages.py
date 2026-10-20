@@ -5,7 +5,9 @@ github-profile-3d-contrib builds its ring from GraphQL contributionsCollection, 
 reports commits in private repositories only as a restricted count, so the ring shows a
 single "other" slice. This recomputes the same chart (top five primary languages weighted
 by the user's commits over the last year, plus "other") from the REST API and swaps it
-into every SVG under SVG_DIR. Geometry and animation mirror create-pie-language.ts (v0.7.1).
+into every SVG under SVG_DIR. Geometry and animation mirror create-pie-language.ts; colors follow
+whichever markup the tool emitted: inline stroke/fill attributes (<= 0.8) or the stroke-bg / fill-fg
+CSS classes introduced in 0.9 for dark-mode support.
 
 Environment:
   GH_TOKEN, GH_USER, EXCLUDE_REPOS  same as commit_activity.py
@@ -55,7 +57,9 @@ def arc_path(a0, a1, outer, inner):
             f"L{pt(inner, a1)}A{inner},{inner},0,{large},0,{pt(inner, a0)}Z")
 
 
-def ring_group(x, y, languages, background, foreground, animate):
+def ring_group(x, y, languages, stroke_attr, fill_attr, animate):
+    """stroke_attr / fill_attr are the attribute strings the tool used for the ring's
+    background stroke and label fill, e.g. 'stroke="#000"' or 'class="stroke-bg"'."""
     height, row, steps = PIE_HEIGHT, 8, 5
     radius = height / 2
     font = height / row / 1.5
@@ -72,12 +76,12 @@ def ring_group(x, y, languages, background, foreground, animate):
     for i, (name, color, count) in enumerate(languages):
         cy = (i + offset) * (height / row)
         markers.append(f'<rect x="0" y="{cy - font / 2}" width="{font}" height="{font}" fill="{color}" '
-                       f'stroke="{background}" stroke-width="1px">{anim(i)}</rect>')
-        labels.append(f'<text dominant-baseline="middle" x="{font * 1.2}" y="{cy}" fill="{foreground}" '
+                       f'{stroke_attr} stroke-width="1px">{anim(i)}</rect>')
+        labels.append(f'<text dominant-baseline="middle" x="{font * 1.2}" y="{cy}" {fill_attr} '
                       f'font-size="{font}px">{escape(name)}{anim(i)}</text>')
         end = angle + 2 * math.pi * count / total
         paths.append(f'<path d="{arc_path(angle, end, radius - radius / 10, radius / 2)}" '
-                     f'stroke="{background}" stroke-width="2px" style="fill: {color};">'
+                     f'{stroke_attr} stroke-width="2px" style="fill: {color};">'
                      f'<title>{escape(name)} {count}</title>{anim(i)}</path>')
         angle = end
     return (f'<g transform="translate({x}, {y})">'
@@ -118,9 +122,12 @@ def main():
             continue
         start, end, x, y = ring
         old = svg[start:end]
-        background = re.search(r'<rect[^>]*stroke="([^"]+)"', old).group(1)
-        foreground = re.search(r'<text[^>]*fill="([^"]+)"', old).group(1)
-        new = ring_group(x, y, languages, background, foreground, "<animate" in old)
+        if 'class="stroke-bg"' in old:  # 0.9+: colors come from the SVG's own CSS classes
+            stroke_attr, fill_attr = 'class="stroke-bg"', 'class="fill-fg"'
+        else:  # <= 0.8: literal colors on each element
+            stroke_attr = f'stroke="{re.search(r"<rect[^>]*stroke=\"([^\"]+)\"", old).group(1)}"'
+            fill_attr = f'fill="{re.search(r"<text[^>]*fill=\"([^\"]+)\"", old).group(1)}"'
+        new = ring_group(x, y, languages, stroke_attr, fill_attr, "<animate" in old)
         path.write_text(svg[:start] + new + svg[end:], encoding="utf-8")
         patched += 1
     print(f"ring redrawn in {patched} SVGs: " + ", ".join(f"{n} {c}" for n, _, c in languages))

@@ -4,7 +4,11 @@
   <img alt="Cagdas Aydemir" src="./header-dark.svg" width="100%" />
 </picture>
 
-<p align="center"><b>Senior Full-Stack Developer · .NET &amp; React</b> · B2B portals, SaaS and multilingual CMS, delivered end to end · Istanbul · remote, or relocation within the EU</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./summary-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./summary-light.svg">
+  <img alt="Senior Full-Stack Developer · .NET &amp; React · B2B portals, SaaS and multilingual CMS, delivered end to end · Istanbul · remote, or relocation within the EU" src="./summary-dark.svg" />
+</picture>
 
 <br/>
 

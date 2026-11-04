@@ -4,6 +4,8 @@
   <img alt="Cagdas Aydemir" src="./header-dark.svg" width="100%" />
 </picture>
 
+<p align="center"><b>Senior Full-Stack Developer · .NET &amp; React</b> · B2B portals, SaaS and multilingual CMS, delivered end to end · Istanbul · remote, or relocation within the EU</p>
+
 <br/>
 
 <div><a href="https://www.cagdasaydemir.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./contact-website-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./contact-website-light.svg"><img src="./contact-website-dark.svg" height="40" alt="cagdasaydemir.com" /></picture></a>&nbsp;

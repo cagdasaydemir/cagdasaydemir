@@ -1,7 +1,7 @@
 <svg fill="none" viewBox="0 0 650 460" width="650" height="460" xmlns="http://www.w3.org/2000/svg">
   <rect width="650" height="460" fill="transparent"/>
   <text x="0" y="28" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start" fill="#656d76">Peak hour 21:00. Busiest day Monday.</text>
-  <text x="0" y="60" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="300" letter-spacing="2" text-anchor="start" fill="#8b949e">1,134 COMMITS  ·  2022 – 2026  ·  UTC+3</text>
+  <text x="0" y="60" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="300" letter-spacing="2" text-anchor="start" fill="#8b949e">1,136 COMMITS  ·  2022 – 2026  ·  UTC+3</text>
   <text x="0" y="96" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start" fill="#8b949e">BY HOUR</text>
   <text x="480" y="96" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start" fill="#8b949e">BY WEEKDAY</text>
   <rect x="0.0" y="143.1" width="13.9" height="46.9" rx="1" fill="#47a042"/>
@@ -27,10 +27,10 @@
   <rect x="358.3" y="115.7" width="13.9" height="74.3" rx="1" fill="#1d6a23"/>
   <rect x="376.2" y="110.0" width="13.9" height="80.0" rx="1" fill="#1d6a23"/>
   <rect x="394.2" y="117.3" width="13.9" height="72.7" rx="1" fill="#1d6a23"/>
-  <rect x="412.1" y="139.1" width="13.9" height="50.9" rx="1" fill="#47a042"/>
+  <rect x="412.1" y="137.5" width="13.9" height="52.5" rx="1" fill="#47a042"/>
   <rect x="480.0" y="110.0" width="18.3" height="80.0" rx="1" fill="#1d6a23"/>
   <rect x="504.3" y="131.4" width="18.3" height="58.6" rx="1" fill="#47a042"/>
-  <rect x="528.6" y="144.6" width="18.3" height="45.4" rx="1" fill="#47a042"/>
+  <rect x="528.6" y="143.8" width="18.3" height="46.2" rx="1" fill="#47a042"/>
   <rect x="552.9" y="152.4" width="18.3" height="37.6" rx="1" fill="#8cc569"/>
   <rect x="577.1" y="136.3" width="18.3" height="53.7" rx="1" fill="#47a042"/>
   <rect x="601.4" y="118.6" width="18.3" height="71.4" rx="1" fill="#1d6a23"/>
@@ -47,15 +47,15 @@
   <text x="586.3" y="206" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">Fr</text>
   <text x="610.6" y="206" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">Sa</text>
   <text x="634.9" y="206" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">Su</text>
-  <text x="0" y="236" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Rhythm</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">Morning 2%  ·  Afternoon 36%  ·  Evening 40%  ·  Night 22%</tspan></text>
+  <text x="0" y="236" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Rhythm</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">Morning 2%  ·  Afternoon 35%  ·  Evening 40%  ·  Night 22%</tspan></text>
   <text x="0" y="272" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start" fill="#8b949e">BY YEAR</text>
   <text x="340" y="272" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start" fill="#8b949e">STREAKS</text>
-  <rect x="0.0" y="349.8" width="40.0" height="2.2" rx="1" fill="#d8e887"/>
+  <rect x="0.0" y="349.9" width="40.0" height="2.1" rx="1" fill="#d8e887"/>
   <rect x="58.0" y="350.5" width="40.0" height="1.5" rx="1" fill="#d8e887"/>
   <rect x="116.0" y="350.5" width="40.0" height="1.5" rx="1" fill="#d8e887"/>
   <rect x="174.0" y="350.5" width="40.0" height="1.5" rx="1" fill="#d8e887"/>
   <rect x="232.0" y="302.0" width="40.0" height="50.0" rx="1" fill="#1d6a23"/>
-  <text x="20.0" y="343.8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">46</text>
+  <text x="20.0" y="343.9" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">46</text>
   <text x="20.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2022</text>
   <text x="78.0" y="344.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">17</text>
   <text x="78.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2023</text>
@@ -63,7 +63,7 @@
   <text x="136.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2024</text>
   <text x="194.0" y="344.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">1</text>
   <text x="194.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2025</text>
-  <text x="252.0" y="296.0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">1,068</text>
+  <text x="252.0" y="296.0" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">1,070</text>
   <text x="252.0" y="368" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="300" text-anchor="middle" fill="#8b949e">2026</text>
   <text x="340" y="300" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Longest streak</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">11 days</tspan></text>
   <text x="340" y="326" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"><tspan font-weight="500" fill="#656d76">Current streak</tspan><tspan dx="10" font-weight="300" letter-spacing="1.5" fill="#8b949e">3 days</tspan></text>
